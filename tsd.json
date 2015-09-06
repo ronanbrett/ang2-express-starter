@@ -1,0 +1,42 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "jquery/jquery.d.ts": {
+      "commit": "338f9db37074d197764e95a487ddb865c5f2d73c"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "832c51db815c766fa42a2e995a7b3136ec6d15c2"
+    },
+    "angular2/angular2.d.ts": {
+      "commit": "832c51db815c766fa42a2e995a7b3136ec6d15c2"
+    },
+    "rx/rx.d.ts": {
+      "commit": "832c51db815c766fa42a2e995a7b3136ec6d15c2"
+    },
+    "rx/rx-lite.d.ts": {
+      "commit": "832c51db815c766fa42a2e995a7b3136ec6d15c2"
+    },
+    "flux/flux.d.ts": {
+      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+    },
+    "postal/postal.d.ts": {
+      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+    },
+    "jasmine/jasmine.d.ts": {
+      "commit": "c5a2f44bab06cf9f2bcc14530171daac1cebff6c"
+    },
+    "angular-protractor/angular-protractor.d.ts": {
+      "commit": "c5a2f44bab06cf9f2bcc14530171daac1cebff6c"
+    },
+    "selenium-webdriver/selenium-webdriver.d.ts": {
+      "commit": "c5a2f44bab06cf9f2bcc14530171daac1cebff6c"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "a1226afe5c4ab96610e088d970eb4f8537b1d116"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ux-membership",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "toastr": "~2.1.2"
+  },
+  "devDependencies": {
+    "systemjs": "*",
+    "es6-module-loader": "~0.17.6"
+  }
+}

@@ -1,0 +1,45 @@
+
+
+checkbox {
+	min-height: 50px;
+	
+	border: $borderWidth solid $borderColor;
+	border-radius: 5px;
+
+	.content {
+		color: $defaultTextColor;
+	}
+	.checkbox {
+		margin:4%;
+		width: 14%;
+		padding-bottom: 14%;
+		border: $borderWidth solid $borderColor;
+		border-radius:10%;
+		
+		&.checked {
+			background-color:$bkSecondaryColor;
+			border: 1px solid $bkSecondaryColor;
+		}
+	}
+	
+	&.small {
+		.checkbox {
+			margin: 0;
+			width: 13%;
+			padding-bottom: 13%;
+		}
+	}
+	
+	&.no-border {
+		border: none;
+		.checkbox {
+			border-radius: 0;
+		}
+	}
+}
+
+checkbox.checkbox--header {
+	h3 {
+		margin: 17px 0;
+	}
+}

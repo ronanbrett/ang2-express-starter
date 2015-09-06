@@ -1,0 +1,11 @@
+node_modules/
+bower_components/
+scripts/
+
+.idea/
+report/
+
+*.log
+
+build/
+dist/

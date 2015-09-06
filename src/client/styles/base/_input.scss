@@ -1,0 +1,36 @@
+.block-input {
+    background-color: $inputBkColor;
+    padding: 5px 10px;
+	border: $inputGroupBorder;
+	
+}
+
+.block-input label {
+	text-transform: uppercase;
+	color: $inputTxtColor;
+}
+
+.block-input input {
+	color: $inputTxtColor;
+    background-color: rgba(0,0,0,0);
+    border: none;
+	box-shadow: none;
+	padding: 0;
+}
+
+.block-input input:focus {
+	border-color: transparent;
+	box-shadow: none;
+}
+
+
+
+.form--nolabel input {
+	background-color: $inputBkColor;
+	padding: 5px 10px;
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
+	color: $inputTxtColor;
+	border: $inputGroupBorder;
+}

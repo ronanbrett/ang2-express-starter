@@ -1,0 +1,20 @@
+.btn-default {
+	background-color: $defaultBtnColor;
+	border: $borderWidth solid $defaultBtnBorderColor;
+	color: $defaultBtnTxtColor;
+	h1, h2, h3, h4, h5, h6 {
+		color: $defaultBtnTxtColor;
+	}
+}
+
+.btn-default:active{}
+.btn-default:focus{}
+
+
+
+.btn {
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+}
