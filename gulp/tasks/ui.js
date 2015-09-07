@@ -1,7 +1,7 @@
-// var gulp          	= require('gulp'),
-// 	fabricator    	= require('gulp-fabricator'),
-// 	path			= require('../paths'),
-// 	config			= require('../config');
+var gulp          	= require('gulp'),
+	fabricator    	= require('gulp-fabricator'),
+	path			= require('../paths'),
+	config			= require('../config');
 
 // /**
 //  *  Generate KSS Objects
@@ -9,10 +9,11 @@
 //  *  Pull CSS Comments out of the scss files and into objects
 //  *  TODO: Decide what to do with these
 //  */
-// gulp.task('ui-kit-generator', function() {
-//     return gulp.src(path.app.styles)
-//         .pipe(fabricator({
-//             output: 'index.html'
-//         }))
-//         .pipe(gulp.dest('ui-docs'));
-// });
+
+gulp.task('ui', function() {
+    return gulp.src(path.app.scss)
+        .pipe(fabricator({
+            output: 'index.html'
+        }))
+        .pipe(gulp.dest('ui-docs'));
+});

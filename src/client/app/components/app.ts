@@ -1,6 +1,7 @@
-import {Component, View} from 'angular2/angular2';
+import {Component, View, Inject} from 'angular2/angular2';
 import {RouterOutlet, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
+import {BlocksService} from 'app/services/blocks';
 
 import {Tests} from 'app/components/test/tests';
 import {appPipes} from 'app/pipes/pipes';
@@ -22,9 +23,14 @@ import {appPipes} from 'app/pipes/pipes';
 export class App {
 
 	votes: number;
+	blocksService: BlocksService;
+	blocks;
 
-	constructor() {
-		this.votes = 10;
+	constructor(blocksService: BlocksService) {
+		blocksService.getBlocks().subscribe(res => { 
+			this.blocks = res
+			console.log(res);
+		});
 	}
 	voteUp(): void {
 	}

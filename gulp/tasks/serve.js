@@ -93,6 +93,7 @@ gulp.task('browserSync', function () {
 gulp.task('api', function () {
     $.nodemon({
         script: path.server,
+		watch: '/src/server/*',
         ext: 'js html',
         env: {
             'NODE_ENV': 'development'
@@ -100,6 +101,8 @@ gulp.task('api', function () {
     })
 
 });
+
+
 
 gulp.task('browserSyncApi', ['api'], function() {
 	browserSync.init({
@@ -115,7 +118,7 @@ gulp.task('browserSyncApi', ['api'], function() {
 
 	$.watch(path.app.scss, function () {
 		runSequence(
-			'inject:scss',
+			
 			'styles',
 			'copy:build',
 			browserSync.reload
