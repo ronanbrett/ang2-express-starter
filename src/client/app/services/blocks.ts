@@ -9,7 +9,7 @@ export class BlocksService {
 	}
 	
 	getBlocks() {
-		return this.http.get('api/css/')
+		return this.http.get('api/blocks/')
 		.toRx()
 		.map(res => res.json());
 	}
