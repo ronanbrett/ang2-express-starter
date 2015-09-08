@@ -22,8 +22,6 @@ export class FilterPipe {
 		if (args[0]['*'] == '*') {
 			return value;
 		}
-		
-		
 		return _.filter(value, args[0]);
 	}
 }
