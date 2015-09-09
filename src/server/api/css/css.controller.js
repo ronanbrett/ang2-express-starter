@@ -3,6 +3,7 @@ var postcss 		= require('postcss')
 	_ 				= require('lodash'),
 	circularJSON 	= require('circular-json'),
 	CSS 			= require('./css.model'),
+	cssParse		= require('css'),
 	crypto 			= require('crypto');
 
 
@@ -36,10 +37,65 @@ exports.importCSS = function(req, res) {
 		root2.forEach(function(record){
 			var query = {};
 			query['hash'] = record['hash'];
-
-			CSS.update(query, record, { upsert: true }, function(err, doc) {
-				if (err) console.log(err);
-			})
+			// TODO: Update this to use POSTCSS Model instead
+			// CSS.update(query, record, { upsert: true }, function(err, doc) {
+			// 	if (err) console.log(err);
+			// })
 		});
 	});
+}
+
+
+exports.index = function(req, res) {
+	fs.readFile('tests/app.css', function (err, data) {
+		data = cssParse.parse(data.toString());
+
+		data.stylesheet.rules.forEach(function(rule){
+			var id = '';
+			switch(rule.type) {
+				case 'media':
+				id = rule.media;
+				break;
+				case 'rule':
+				id = rule.selectors.join();
+				break;
+				case 'keyframes':
+				id = rule.vendor ? rule.vendor + rule.name : rule.name; 
+				break;
+				case 'comment':
+				id = rule.comment;
+				break;
+				case 'charset':
+				id = rule.charset;
+				break;
+				case 'custom-media':
+				id = rule.name;
+				break;
+				case 'document':
+				id = rule.document;
+				break;
+				case 'font-face':
+				id = rule.declarations.join();
+				break;
+				case 'host':
+				id = rule.rules.join();
+				break;
+				case 'import':
+				id = rules.import;
+				break;
+				case 'namespace':
+				id= rules.namespace;
+				break;
+			}
+			rule.hash = crypto.createHash('md5').update(id).digest('hex');
+			var query = {};
+			query['hash'] = rule['hash'];
+			CSS.update(query, rule, { upsert: true }, function(err, doc) {
+				if (err) console.log(err);
+				console.log(doc)
+			})
+		})
+		res.send(data);
+
+	})
 }

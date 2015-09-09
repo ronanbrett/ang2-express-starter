@@ -4,12 +4,22 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var CssSchema = new Schema({
-  name: String,
-  params: String,
-  selector: { type: String },
+  hash: String,
   type: String,
-  hash: { type: String, unique: true},
-  nodes: []
+  declarations: [],
+  position: {},
+  name: String,
+  keyframes: [],
+  vendor: String,
+  comment: String,
+  charset: String,
+  media: String,
+  document: String,
+  import: String,
+  rules: [],
+  namespace: String,
+  selectors: [],
+  supports: String
   
 });
 

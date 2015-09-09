@@ -12,6 +12,7 @@ module.exports = function(app) {
   // Insert routes below
   app.use('/api/blocks', require('./api/blocks'));
   app.use('/api/css', require('./api/css'));
+  app.use('/api/sections', require('./api/sections'));
   
   
   // // All undefined asset or api routes should return a 404

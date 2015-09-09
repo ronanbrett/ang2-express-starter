@@ -4,8 +4,11 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var BlocksSchema = new Schema({
-  url: String,
-  blocks: [],
+  name: String,
+  version: String,
+  state: {},
+  markup: {},
+  hash: String
   
 });
 
