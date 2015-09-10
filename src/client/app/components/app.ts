@@ -2,6 +2,7 @@ import {Component, View, Inject} from 'angular2/angular2';
 import {RouterOutlet, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {BlocksService} from 'app/services/blocks';
+import {UILibrary} from 'app/components/ui_library/ui_library';
 
 import {Tests} from 'app/components/test/tests';
 import {appPipes} from 'app/pipes/pipes';
@@ -9,7 +10,7 @@ import {appPipes} from 'app/pipes/pipes';
 
 @Component({
 	selector: 'app', // without [ ] means we are selecting the tag directly
-	bindings: []
+	bindings: [BlocksService]
 })
 
 @View({
@@ -19,18 +20,21 @@ import {appPipes} from 'app/pipes/pipes';
 })
 
 
+@RouteConfig(
+	[
+		{path: '/',  redirectTo: '/ui'},
+		{path: '/tests/...',  component: Tests, as: 'tests'},
+		{path: '/ui',  component: UILibrary, as: 'ui'},
+	])
+
 
 export class App {
 
 	votes: number;
-	blocksService: BlocksService;
-	blocks;
+	
 
-	constructor(blocksService: BlocksService) {
-		blocksService.getBlocks().subscribe(res => { 
-			this.blocks = res
-			console.log(res);
-		});
+	constructor() {
+		
 	}
 	voteUp(): void {
 	}

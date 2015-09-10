@@ -47,6 +47,14 @@ exports.importCSS = function(req, res) {
 
 
 exports.index = function(req, res) {
+	CSS.find({}, function(err, docs){
+		if(err) console.log(err);
+		res.send(docs)
+	})
+}
+
+
+exports.import = function(req, res) {
 	fs.readFile('tests/app.css', function (err, data) {
 		data = cssParse.parse(data.toString());
 
@@ -95,7 +103,6 @@ exports.index = function(req, res) {
 				console.log(doc)
 			})
 		})
-		res.send(data);
-
+		
 	})
 }

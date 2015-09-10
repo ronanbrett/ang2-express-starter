@@ -106,6 +106,7 @@ gulp.task('api', function () {
 
 gulp.task('browserSyncApi', ['api'], function() {
 	browserSync.init({
+		port: 80,
 		proxy:  "localhost:9000"
 	});
 	$.watch(path.app.templates, function () {

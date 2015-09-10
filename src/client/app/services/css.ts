@@ -3,13 +3,13 @@ import {Observable} from 'rx';
 import {Http, Headers, Jsonp} from 'http/http';
 
 @Injectable()
-export class BlocksService {
+export class CSSService {
 	constructor(public http: Http) {
 		
 	}
 	
-	getBlocks() {
-		return this.http.get('api/blocks/')
+	getRules() {
+		return this.http.get('api/css/')
 		.toRx()
 		.map(res => res.json());
 	}

@@ -47,13 +47,14 @@
 	overflow-y: auto;
 	z-index: 5;
 	
+	
 	&.is-visible {
 		transform: translateX(0);
 	}
 }
 
-
 .aa-layout__content {
 	display: flex;
 	flex: 1;
+	margin-left: 240px;
 }

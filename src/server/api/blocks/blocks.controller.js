@@ -4,12 +4,14 @@ var fs = require('fs'),
 	crypto 			= require('crypto');
 	
 
-exports.index = function(req, res) {
+
+exports.import = function(req, res) {
 	fs.readFile('tests/ui-blocks.json', function (err, data) {
 		if (err) throw err;
 		data = JSON.parse(data.toString());
 		
 		var blocks = [];
+		
 		
 		for (var key in data) {
 			if (data.hasOwnProperty(key)) {
@@ -22,7 +24,7 @@ exports.index = function(req, res) {
 					element.hash = crypto.createHash('md5').update(key + element.name).digest('hex');
 					console.log(element);
 					$ = cheerio.load(element.markup.example);
-					console.log($.css());
+					
 					Blocks.update(query, element, {upsert: true}, function(err, doc) {
 					if(err) console.log(err);
 				} )
@@ -34,8 +36,15 @@ exports.index = function(req, res) {
 			}
 		}
 		
-			//res.send(data)
+		res.send(data)
 	})
 }
 
-exports.index();
+
+
+
+exports.index = function(req, res) {
+	Blocks.find({}, function(err, blocks) {
+		res.send(blocks);
+	})
+}
