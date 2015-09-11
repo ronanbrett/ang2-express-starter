@@ -1,23 +1,30 @@
 import {Component, View, Inject, Host, NgFor} from 'angular2/angular2';
-import {BlocksService} from 'app/services/blocks';
+import {RouteConfig, ROUTER_DIRECTIVES, RouterOutlet} from 'angular2/router';
 import {angularDirectives} from 'app/directives/directives';
+import {UIComponent, UIComponents} from './ui_library_modules';
 
 @Component({
-	selector: 'ui-library'
+	selector: 'ui-library',
+
 })
+
+
+@RouteConfig([
+	{ path: '/', redirectTo: '/home' },
+	{ path: '/home', as: 'home', component: UIComponents },
+])
+
 
 @View({
-	templateUrl:'app/components/ui_library/ui_library.html',
-	directives: [angularDirectives, NgFor]
+	directives: [RouterOutlet],
+	templateUrl : 'app/components/test/tests.html'
 })
 
+
 export class UILibrary {
-	blocks;
 	
-	constructor(public blocksService: BlocksService) {
-		blocksService.getBlocks().subscribe(res => { 
-			this.blocks = res
-			console.log(res);
-		});
+	
+	constructor() {
+	
 	}
 }

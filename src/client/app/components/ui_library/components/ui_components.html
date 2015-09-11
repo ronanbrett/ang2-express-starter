@@ -1,0 +1,9 @@
+<sidebar>
+	<div actions>Actions</div>
+	<div subactions>Sub Actions</div>
+</sidebar>
+<div *ng-for="#block of blocks">
+	<h1>{{block.name}}</h1>
+	<div [inner-html]="block.markup.example"></div>
+	<h2>States</h2>
+</div>

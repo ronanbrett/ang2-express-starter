@@ -24,12 +24,17 @@
     "src\\client\\app\\pipes\\filter.pipe.spec.ts",
     "src\\client\\app\\pipes\\filter.pipe.ts",
     "src\\client\\app\\pipes\\pipes.ts",
-    "src\\client\\app\\services\\blocks.ts",
+    "src\\client\\app\\services\\components.ts",
     "src\\client\\app\\services\\css.ts",
     "src\\client\\app\\services\\services.ts",
     "src\\client\\app\\components\\import\\import.ts",
     "src\\client\\app\\components\\test\\tests.ts",
     "src\\client\\app\\components\\ui_library\\ui_library.ts",
-    "src\\client\\app\\components\\test\\home\\home.ts"
+    "src\\client\\app\\components\\ui_library\\ui_library_modules.ts",
+    "src\\client\\app\\directives\\section\\section.ts",
+    "src\\client\\app\\components\\test\\home\\home.ts",
+    "src\\client\\app\\components\\ui_library\\component\\ui_component.ts",
+    "src\\client\\app\\components\\ui_library\\components\\ui_components.ts",
+    "src\\client\\app\\directives\\toolbars\\sidebar\\sidebar.ts"
   ]
 }

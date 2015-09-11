@@ -4,8 +4,13 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var SectionSchema = new Schema({
-  url: String,
-  blocks: [],
+	title: String,
+	contents: [{
+		id: String,
+		position: Number,
+		type: String,
+		content: ''
+	}]
   
 });
 

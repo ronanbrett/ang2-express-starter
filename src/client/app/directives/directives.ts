@@ -6,9 +6,14 @@ import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 
+import {Section} from './section/section';
+import {Sidebar, SidebarAction} from './toolbars/sidebar/sidebar';
 
 // global App only directives
 export var appDirectives: Array<any> = [
+	Sidebar,
+	Section,
+	SidebarAction
 	
 
 ];

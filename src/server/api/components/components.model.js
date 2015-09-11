@@ -3,13 +3,13 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var BlocksSchema = new Schema({
+var ComponentsSchema = new Schema({
   name: String,
   version: String,
-  state: {},
+  state: [],
   markup: {},
   hash: String
   
 });
 
-module.exports = mongoose.model('Blocks', BlocksSchema);
+module.exports = mongoose.model('Components', ComponentsSchema);
