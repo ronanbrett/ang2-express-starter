@@ -67,7 +67,6 @@ gulp.task('browserSync', function () {
 
 	$.watch(path.app.scss, function () {
 		runSequence(
-			'inject:scss',
 			'styles',
 			'copy:build',
 			browserSync.reload
@@ -93,7 +92,7 @@ gulp.task('browserSync', function () {
 gulp.task('api', function () {
     $.nodemon({
         script: path.server,
-		watch: '/src/server/*',
+		"ignore": ["build/**",'gulp/**','node_modules/**','scripts/**','src/client/**','tests/**'],
         ext: 'js html',
         env: {
             'NODE_ENV': 'development'
@@ -106,37 +105,37 @@ gulp.task('api', function () {
 
 gulp.task('browserSyncApi', ['api'], function() {
 	browserSync.init({
-		port: 80,
-		proxy:  "localhost:9000"
+		proxy:  "http://localhost:9000",
+		logLevel: 'debug',
+    	logConnections: true
 	});
-	$.watch(path.app.templates, function () {
-		runSequence(
-			'clean:html',
-			'copy:build',
-			browserSync.reload
-			);
-	});
+	// $.watch(path.app.templates, function () {
+	// 	runSequence(
+	// 		'clean:html',
+	// 		'copy:build',
+	// 		browserSync.reload
+	// 		);
+	// });
 
-	$.watch(path.app.scss, function () {
-		runSequence(
-			
-			'styles',
-			'copy:build',
-			browserSync.reload
-			);
-	});
+	// $.watch(path.app.scss, function () {
+	// 	runSequence(
+	// 		'styles',
+	// 		'copy:build',
+	// 		browserSync.reload
+	// 		);
+	// });
 
-	$.watch(path.app.ts, function () {
-		runSequence(
-			'build:tsconf',
-			'typescript',
-			browserSync.reload
-			);
-	});
-	$.watch(path.app.images, function () {
-		runSequence(
-			'images',
-			browserSync.reload
-			);
-	});
+	// $.watch(path.app.ts, function () {
+	// 	runSequence(
+	// 		'build:tsconf',
+	// 		'typescript',
+	// 		browserSync.reload
+	// 		);
+	// });
+	// $.watch(path.app.images, function () {
+	// 	runSequence(
+	// 		'images',
+	// 		browserSync.reload
+	// 		);
+	// });
 });
